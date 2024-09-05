@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PDF Privacy</title>
     <style>
-      body {
+        body {
             font-family: Arial, sans-serif;
             background-color: #16383D;
             color: white;
@@ -25,37 +25,33 @@
             text-align: center;
         }
         #compress-dialog label {
-        display: block;
-        margin-bottom: 10px;
-    }
-
-    #compression-progress {
-        margin-top: 15px;
-        margin-bottom: 15px;
-    }
-
-    #compression-progress-bar {
-        width: 100%;
-        height: 20px;
-    }
-
-    #compression-progress-text {
-        display: block;
-        text-align: center;
-        margin-top: 5px;
-    }
-    .compression-quality {
-    margin-right: 10px;
-    margin-bottom: 10px;
-}
-
-.compression-quality.selected {
-    background-color: #4CAF50;
-    color: white;
-}
-    #size-options input[type="number"] {
-        width: 100px;
-    }
+            display: block;
+            margin-bottom: 10px;
+        }
+        #compression-progress {
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+        #compression-progress-bar {
+            width: 100%;
+            height: 20px;
+        }
+        #compression-progress-text {
+            display: block;
+            text-align: center;
+            margin-top: 5px;
+        }
+        .compression-quality {
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+        .compression-quality.selected {
+            background-color: #4CAF50;
+            color: white;
+        }
+        #size-options input[type="number"] {
+            width: 100px;
+        }
         #toolbar {
             background-color: #16383D;
             padding: 15px;
@@ -85,67 +81,71 @@
             flex: 1;
             background-color: white;
             overflow: auto;
-            
         }
         .dialog {
-    display: none;
-    position: fixed;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #16383D;
-    color: white;
-    border: none;
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-    max-width: 90%;
-    width: 400px;
-}
-.dialog h3 {
-    margin-top: 0;
-    margin-bottom: 20px;
-    font-size: 24px;
-    text-align: center;
-}
-.dialog-content {
-    margin-bottom: 20px;
-}
-.dialog-buttons {
-    display: flex;
-    justify-content: space-between;
-}
-.dialog button {
-    background-color: white;
-    color: #16383D;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background-color 0.3s;
-}
-.dialog button:hover {
-    background-color: #e0e0e0;
-}
-.dialog input[type="file"],
-.dialog input[type="number"],
-.dialog input[type="text"],
-.dialog select {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid rgba(255,255,255,0.3);
-    background-color: rgba(255,255,255,0.1);
-    color: white;
-    border-radius: 5px;
-}
-.dialog label {
-    display: block;
-    margin-bottom: 5px;
-}
+            display: none;
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #16383D;
+            color: white;
+            border: none;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            max-width: 90%;
+            width: 400px;
+            z-index: 1000;
+        }
+        .dialog h3 {
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-size: 24px;
+            text-align: center;
+        }
+        .dialog-content {
+            margin-bottom: 20px;
+        }
+        .dialog-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        .dialog button {
+            background-color: white;
+            color: #16383D;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s;
+            min-width: 100px;
+        }
+        .dialog button:hover {
+            background-color: #e0e0e0;
+        }
+        .dialog input[type="file"],
+        .dialog input[type="number"],
+        .dialog input[type="text"],
+        .dialog select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid rgba(255,255,255,0.3);
+            background-color: rgba(255,255,255,0.1);
+            color: white;
+            border-radius: 5px;
+        }
+        .dialog label {
+            display: block;
+            margin-bottom: 5px;
+        }
         #merge-files-list {
             margin-bottom: 20px;
+            max-height: 200px;
+            overflow-y: auto;
         }
         .merge-file-item {
             display: flex;
@@ -157,25 +157,6 @@
             border-radius: 4px;
         }
         .remove-file {
-            #merge-dialog .dialog-buttons {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            margin-top: 20px;
-        }
-        #merge-dialog button {
-            width: 100%;
-            margin-right: 0;
-        }
-        #merge-dialog #add-merge-file-btn {
-            order: -1;
-        }
-        #merge-dialog #merge-btn {
-            order: 1;
-        }
-        #merge-dialog button[onclick="closeDialog('merge-dialog')"] {
-            order: 2;
-        }
             background-color: #ff4d4d;
             color: white;
             border: none;
@@ -198,7 +179,6 @@
         label {
             margin-right: 15px;
         }
-
         @media (max-width: 600px) {
             header {
                 font-size: 24px;
@@ -212,7 +192,7 @@
                 margin: 10px;
             }
         }
-        </style>
+    </style>
 </head>
 <body>
 <div id="container">
@@ -235,75 +215,101 @@
 
     <div id="pdf2png-dialog" class="dialog">
         <h3>Convert to PNG</h3>
-        <label for="png-all-pages">Pages:</label>
-        <input type="radio" id="png-all-pages" name="png-pages" value="all" checked>
-        <label for="png-all-pages">All Pages</label><br>
-        <input type="radio" id="png-specific-pages" name="png-pages" value="specific">
-        <label for="png-specific-pages">Select Pages:</label>
-        <input type="text" id="png-page-input" placeholder="e.g., 1,3-5,7">
-        <br>
-        <button id="png-convert-btn">Convert</button>
-        <button onclick="closeDialog('pdf2png-dialog')">Cancel</button>
+        <div class="dialog-content">
+            <label>
+                <input type="radio" id="png-all-pages" name="png-pages" value="all" checked>
+                All Pages
+            </label>
+            <label>
+                <input type="radio" id="png-specific-pages" name="png-pages" value="specific">
+                Select Pages
+            </label>
+            <input type="text" id="png-page-input" placeholder="e.g., 1,3-5,7">
+        </div>
+        <div class="dialog-buttons">
+            <button onclick="closeDialog('pdf2png-dialog')">Cancel</button>
+            <button id="png-convert-btn">Convert</button>
+        </div>
     </div>
 
     <div id="split-dialog" class="dialog">
         <h3>Split PDF</h3>
-        <label for="split-page-input">Split at Page:</label>
-        <input type="number" id="split-page-input" min="2" placeholder="Enter page number">
-        <br>
-        <button id="split-confirm-btn">Split</button>
-        <button onclick="closeDialog('split-dialog')">Cancel</button>
+        <div class="dialog-content">
+            <label for="split-page-input">Split at Page:</label>
+            <input type="number" id="split-page-input" min="2" placeholder="Enter page number">
+        </div>
+        <div class="dialog-buttons">
+            <button onclick="closeDialog('split-dialog')">Cancel</button>
+            <button id="split-confirm-btn">Split</button>
+        </div>
     </div>
 
     <div id="merge-dialog" class="dialog">
         <h3>Merge PDFs</h3>
-        <div id="merge-files-list"></div>
-        <input type="file" id="merge-file-input" accept="application/pdf" style="display: none;" multiple>
-        <button id="add-merge-file-btn">Upload Additional</button>
-        <br>
-        <button id="merge-btn">Merge</button>
-        <button onclick="closeDialog('merge-dialog')">Cancel</button>
+        <div class="dialog-content">
+            <div id="merge-files-list"></div>
+            <input type="file" id="merge-file-input" accept="application/pdf" style="display: none;" multiple>
+            <button id="add-merge-file-btn">Upload Additional</button>
+        </div>
+        <div class="dialog-buttons">
+            <button onclick="closeDialog('merge-dialog')">Cancel</button>
+            <button id="merge-btn">Merge</button>
+        </div>
     </div>
 
     <div id="compress-dialog" class="dialog">
         <h3>Compress PDF</h3>
-        <div>
-            <label>
-                <input type="radio" name="compression-type" value="quality" checked> Compress by Quality
-            </label>
-            
+        <div class="dialog-content">
+            <div>
+                <label>
+                    <input type="radio" name="compression-type" value="quality" checked> Compress by Quality
+                </label>
+                <label>
+                    <input type="radio" name="compression-type" value="size"> Compress by Size
+                </label>
+            </div>
+            <div id="quality-options">
+                <label>
+                    <input type="radio" name="compression-quality" value="0.95" checked> Low Compression
+                </label>
+                <label>
+                    <input type="radio" name="compression-quality" value="0.9"> Medium Compression
+                </label>
+                <label>
+                    <input type="radio" name="compression-quality" value="0.85"> High Compression
+                </label>
+            </div>
+            <div id="size-options" style="display: none;">
+                <label>
+                    Target Size (KB): <input type="number" id="target-size" min="1">
+                </label>
+            </div>
+            <div id="compression-progress" style="display: none;">
+                <progress id="compression-progress-bar" value="0" max="100"></progress>
+                <span id="compression-progress-text">0%</span>
+            </div>
         </div>
-        <div id="quality-options">
-            <label>
-                <input type="radio" name="compression-quality" value="0.95" checked> Low Compression
-            </label>
-            <label>
-                <input type="radio" name="compression-quality" value="0.9"> Medium Compression
-            </label>
-            <label>
-                <input type="radio" name="compression-quality" value="0.85"> High Compression
-            </label>
+        <div class="dialog-buttons">
+            <button onclick="closeDialog('compress-dialog')">Cancel</button>
+            <button id="compress-confirm-btn">Compress</button>
         </div>
-        <div id="size-options" style="display: none;">
-            <label>
-                Target Size (KB): <input type="number" id="target-size" min="1">
-            </label>
-        </div>
-        <div id="compression-progress" style="display: none;">
-            <progress id="compression-progress-bar" value="0" max="100"></progress>
-            <span id="compression-progress-text">0%</span>
-        </div>
-        <button id="compress-confirm-btn">Compress</button>
-        <button onclick="closeDialog('compress-dialog')">Cancel</button>
     </div>
 
     <div id="image-to-pdf-dialog" class="dialog">
         <h3>Convert Images to PDF</h3>
-        <input type="file" id="image-input" accept="image/*" multiple style="display: none;">
-        <button id="add-image-btn">Add Images</button>
-        <div id="image-list"></div>
-        <button id="convert-images-btn">Convert to PDF</button>
-        <button onclick="closeDialog('image-to-pdf-dialog')">Cancel</button>
+        <div class="dialog-content">
+            <input type="file" id="image-input" accept="image/*" multiple style="display: none;">
+            <button id="add-image-btn">Add Images</button>
+            <div id="image-list"></div>
+        </div>
+        <div class="dialog-buttons">
+            <button onclick="closeDialog('image-to-pdf-dialog')">Cancel</button>
+            <button id="convert-images-btn">Convert to PDF</button>
+        </div>
+        <div id="conversion-progress" style="display: none;">
+            <progress id="conversion-progress-bar" value="0" max="100"></progress>
+            <span id="conversion-progress-text">0%</span>
+        </div>
     </div>
 
     <div id="image-resize-dialog" class="dialog">
@@ -322,8 +328,8 @@
             </label>
         </div>
         <div class="dialog-buttons">
-            <button id="resize-image-btn">Resize</button>
             <button onclick="closeDialog('image-resize-dialog')">Cancel</button>
+            <button id="resize-image-btn">Resize</button>
         </div>
     </div>
 
@@ -343,8 +349,8 @@
             </select>
         </div>
         <div class="dialog-buttons">
-            <button id="convert-image-btn">Convert</button>
             <button onclick="closeDialog('image-convert-dialog')">Cancel</button>
+            <button id="convert-image-btn">Convert</button>
         </div>
     </div>
 
@@ -357,13 +363,13 @@
 <script src="https://unpkg.com/pdfkit@0.11.0/js/pdfkit.standalone.js"></script>
 <script src="https://unpkg.com/blob-stream@0.1.3/blob-stream.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js"></script>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/exif-js/2.3.0/exif.js"></script>
 <script>
     let currentPDFData = null;
     let currentPDF = null;
     let pdfDoc = null;
     let currentFileName = '';
-
+    const pdfjs = window['pdfjs-dist/build/pdf'];
     pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.9.359/pdf.worker.min.js';
 
     function closeDialog(dialogId) {
@@ -446,7 +452,12 @@
         document.getElementById('pdf2png-dialog').style.display = 'block';
     });
 
-    document.getElementById('png-convert-btn').addEventListener('click', async () => {
+    // Replace the existing event listener for png-convert-btn with this one
+document.getElementById('png-convert-btn').addEventListener('click', async () => {
+    if (!isProcessing) {
+        isProcessing = true;
+        document.getElementById('png-convert-btn').disabled = true;
+
         const pagesOption = document.querySelector('input[name="png-pages"]:checked').value;
         let pagesToConvert = [];
 
@@ -459,10 +470,10 @@
 
         const baseName = currentFileName.replace('.pdf', '');
 
-        for (const pageNum of pagesToConvert) {
-            try {
+        try {
+            for (const pageNum of pagesToConvert) {
                 const page = await pdfDoc.getPage(pageNum);
-                const scale = 3; // Increased scale for better quality
+                const scale = 3;
                 const viewport = page.getViewport({scale: scale});
                 const canvas = document.createElement('canvas');
                 const context = canvas.getContext('2d');
@@ -474,16 +485,18 @@
                 canvas.toBlob((blob) => {
                     const fileName = `${baseName} ${pageNum}.png`;
                     download(blob, fileName, "image/png");
-                }, 'image/png', 1); // Set quality to maximum
-            } catch (error) {
-                console.error("Error converting to PNG:", error);
-                alert(`Error converting page ${pageNum} to PNG.`);
+                }, 'image/png', 1);
             }
+        } catch (error) {
+            console.error("Error converting to PNG:", error);
+            alert(`Error converting to PNG: ${error.message}`);
+        } finally {
+            isProcessing = false;
+            document.getElementById('png-convert-btn').disabled = false;
+            closeDialog('pdf2png-dialog');
         }
-
-        closeDialog('pdf2png-dialog');
-    });
-
+    }
+});
     function parsePageRanges(pageInput, numPages) {
         const pages = new Set();
         const ranges = pageInput.split(',');
@@ -516,10 +529,17 @@
         document.getElementById('split-dialog').style.display = 'block';
     });
 
-    document.getElementById('split-confirm-btn').addEventListener('click', async () => {
+    // Replace the existing event listener for split-confirm-btn with this one
+document.getElementById('split-confirm-btn').addEventListener('click', async () => {
+    if (!isProcessing) {
+        isProcessing = true;
+        document.getElementById('split-confirm-btn').disabled = true;
+
         const splitPage = parseInt(document.getElementById('split-page-input').value);
         if (isNaN(splitPage) || splitPage < 2 || splitPage > currentPDF.getPageCount()) {
             alert("Please enter a valid page number.");
+            isProcessing = false;
+            document.getElementById('split-confirm-btn').disabled = false;
             return;
         }
 
@@ -542,11 +562,14 @@
             download(new Blob([pdfBytes2]), `${baseName} part 2.pdf`, "application/pdf");
         } catch (error) {
             console.error("Error splitting PDF:", error);
-            alert("Error splitting PDF");
+            alert(`Error splitting PDF: ${error.message}`);
+        } finally {
+            isProcessing = false;
+            document.getElementById('split-confirm-btn').disabled = false;
+            closeDialog('split-dialog');
         }
-
-        closeDialog('split-dialog');
-    });
+    }
+});
 
     document.getElementById('btn-merge').addEventListener('click', () => {
     if (!currentPDF) {
@@ -610,9 +633,16 @@
 }
 
 
-    document.getElementById('merge-btn').addEventListener('click', async () => {
+    // Replace the existing event listener for merge-btn with this one
+document.getElementById('merge-btn').addEventListener('click', async () => {
+    if (!isProcessing) {
+        isProcessing = true;
+        document.getElementById('merge-btn').disabled = true;
+
         if (mergeFiles.length < 2) {
             alert("Please select at least two PDF files to merge.");
+            isProcessing = false;
+            document.getElementById('merge-btn').disabled = false;
             return;
         }
 
@@ -633,11 +663,14 @@
             updateMergeFilesList();
         } catch (error) {
             console.error("Error merging PDFs:", error);
-            alert("Error merging PDFs");
+            alert(`Error merging PDFs: ${error.message}`);
+        } finally {
+            isProcessing = false;
+            document.getElementById('merge-btn').disabled = false;
+            closeDialog('merge-dialog');
         }
-
-        closeDialog('merge-dialog');
-    });
+    }
+});
 
     // Drag and drop functionality
     const viewer = document.getElementById('viewer');
@@ -840,50 +873,137 @@ function updateImageList() {
     });
 }
 
-document.getElementById('convert-images-btn').addEventListener('click', async () => {
-    if (imageFiles.length === 0) {
-        alert("Please add at least one image.");
-        return;
+
+
+// Helper function to get image orientation from EXIF data
+function getImageOrientation(file) {
+    return new Promise((resolve) => {
+        EXIF.getData(file, function() {
+            const orientation = EXIF.getTag(this, "Orientation") || 1;
+            resolve(orientation);
+        });
+    });
+}
+
+// Helper function to create an oriented canvas from an image
+function createOrientedCanvas(img, orientation) {
+    const canvas = document.createElement('canvas');
+    const ctx = canvas.getContext('2d');
+
+    // Set proper canvas dimensions before transform & export
+    if ([5, 6, 7, 8].indexOf(orientation) > -1) {
+        canvas.width = img.height;
+        canvas.height = img.width;
+    } else {
+        canvas.width = img.width;
+        canvas.height = img.height;
     }
 
-    try {
-        const pdfDoc = await PDFLib.PDFDocument.create();
+    // Transform context before drawing image
+    switch (orientation) {
+        case 2: ctx.transform(-1, 0, 0, 1, img.width, 0); break;
+        case 3: ctx.transform(-1, 0, 0, -1, img.width, img.height); break;
+        case 4: ctx.transform(1, 0, 0, -1, 0, img.height); break;
+        case 5: ctx.transform(0, 1, 1, 0, 0, 0); break;
+        case 6: ctx.transform(0, 1, -1, 0, img.height, 0); break;
+        case 7: ctx.transform(0, -1, -1, 0, img.height, img.width); break;
+        case 8: ctx.transform(0, -1, 1, 0, 0, img.width); break;
+        default: break;
+    }
 
-        for (const file of imageFiles) {
-            const imageBytes = await file.arrayBuffer();
-            let image;
-            if (file.type === 'image/jpeg') {
-                image = await pdfDoc.embedJpg(imageBytes);
-            } else if (file.type === 'image/png') {
-                image = await pdfDoc.embedPng(imageBytes);
-            } else {
-                console.warn(`Unsupported image type: ${file.type}`);
-                continue;
-            }
+    // Draw image
+    ctx.drawImage(img, 0, 0);
+    return canvas;
+}
 
-            const page = pdfDoc.addPage();
-            const { width, height } = page.getSize();
-            const scaleX = width / image.width;
-            const scaleY = height / image.height;
-            const scale = Math.min(scaleX, scaleY);
+// Function to convert images to PDF
+async function convertImagesToPDF(progressCallback) {
+    const pdfDoc = await PDFLib.PDFDocument.create();
+    const totalImages = imageFiles.length;
 
-            page.drawImage(image, {
-                x: (width - image.width * scale) / 2,
-                y: (height - image.height * scale) / 2,
-                width: image.width * scale,
-                height: image.height * scale,
-            });
+    for (let i = 0; i < totalImages; i++) {
+        const file = imageFiles[i];
+        const orientation = await getImageOrientation(file);
+        
+        // Create an image element and wait for it to load
+        const img = new Image();
+        const imageLoadPromise = new Promise((resolve) => {
+            img.onload = () => resolve();
+        });
+        img.src = URL.createObjectURL(file);
+        await imageLoadPromise;
+
+        // Create oriented canvas
+        const canvas = createOrientedCanvas(img, orientation);
+
+        // Convert canvas to PNG data URL
+        const pngDataUrl = canvas.toDataURL('image/png');
+        
+        // Remove the "data:image/png;base64," part
+        const pngImageBytes = Uint8Array.from(atob(pngDataUrl.split(',')[1]), c => c.charCodeAt(0));
+
+        // Embed the PNG image
+        const embeddedImage = await pdfDoc.embedPng(pngImageBytes);
+        const { width, height } = embeddedImage;
+
+        // Add a page with the dimensions of the image
+        const page = pdfDoc.addPage([width, height]);
+
+        // Draw the image on the page
+        page.drawImage(embeddedImage, {
+            x: 0,
+            y: 0,
+            width: width,
+            height: height,
+        });
+
+        // Update progress
+        progressCallback((i + 1) / totalImages * 100);
+    }
+
+    const pdfBytes = await pdfDoc.save();
+    return pdfBytes;
+}
+
+// Updated event listener for convert-images-btn
+document.getElementById('convert-images-btn').addEventListener('click', async () => {
+    if (!isProcessing) {
+        isProcessing = true;
+        document.getElementById('convert-images-btn').disabled = true;
+
+        if (imageFiles.length === 0) {
+            alert("Please add at least one image.");
+            isProcessing = false;
+            document.getElementById('convert-images-btn').disabled = false;
+            return;
         }
 
-        const pdfBytes = await pdfDoc.save();
-        download(new Blob([pdfBytes]), "images_to_pdf.pdf", "application/pdf");
+        const progressBar = document.getElementById('conversion-progress-bar');
+        const progressText = document.getElementById('conversion-progress-text');
+        const progressDiv = document.getElementById('conversion-progress');
+        
+        progressDiv.style.display = 'block';
+        progressBar.value = 0;
+        progressText.textContent = '0%';
 
-        imageFiles.length = 0;
-        updateImageList();
-        closeDialog('image-to-pdf-dialog');
-    } catch (error) {
-        console.error("Error converting images to PDF:", error);
-        alert("Error converting images to PDF");
+        try {
+            const pdfBytes = await convertImagesToPDF((progress) => {
+                progressBar.value = progress;
+                progressText.textContent = `${Math.round(progress)}%`;
+            });
+            download(new Blob([pdfBytes]), "images_to_pdf.pdf", "application/pdf");
+
+            imageFiles.length = 0;
+            updateImageList();
+        } catch (error) {
+            console.error("Error converting images to PDF:", error);
+            alert(`Error converting images to PDF: ${error.message}`);
+        } finally {
+            isProcessing = false;
+            document.getElementById('convert-images-btn').disabled = false;
+            progressDiv.style.display = 'none';
+            closeDialog('image-to-pdf-dialog');
+        }
     }
 });
 
@@ -939,27 +1059,40 @@ function updateWidth() {
     }
 }
 
+// Replace the existing event listener for resize-image-btn with this one
 document.getElementById('resize-image-btn').addEventListener('click', async () => {
-    if (!resizeImageFile) {
-        alert("Please select an image first.");
-        return;
-    }
+    if (!isProcessing) {
+        isProcessing = true;
+        document.getElementById('resize-image-btn').disabled = true;
 
-    const targetWidth = parseInt(document.getElementById('resize-width').value);
-    const targetHeight = parseInt(document.getElementById('resize-height').value);
+        if (!resizeImageFile) {
+            alert("Please select an image first.");
+            isProcessing = false;
+            document.getElementById('resize-image-btn').disabled = false;
+            return;
+        }
 
-    if (isNaN(targetWidth) || isNaN(targetHeight) || targetWidth <= 0 || targetHeight <= 0) {
-        alert("Please enter valid dimensions.");
-        return;
-    }
+        const targetWidth = parseInt(document.getElementById('resize-width').value);
+        const targetHeight = parseInt(document.getElementById('resize-height').value);
 
-    try {
-        const resizedImage = await resizeImage(resizeImageFile, targetWidth, targetHeight);
-        download(resizedImage, `resized_${resizeImageFile.name}`, resizeImageFile.type);
-        closeDialog('image-resize-dialog');
-    } catch (error) {
-        console.error("Error resizing image:", error);
-        alert("Error resizing image");
+        if (isNaN(targetWidth) || isNaN(targetHeight) || targetWidth <= 0 || targetHeight <= 0) {
+            alert("Please enter valid dimensions.");
+            isProcessing = false;
+            document.getElementById('resize-image-btn').disabled = false;
+            return;
+        }
+
+        try {
+            const resizedImage = await resizeImage(resizeImageFile, targetWidth, targetHeight);
+            download(resizedImage, `resized_${resizeImageFile.name}`, resizeImageFile.type);
+        } catch (error) {
+            console.error("Error resizing image:", error);
+            alert(`Error resizing image: ${error.message}`);
+        } finally {
+            isProcessing = false;
+            document.getElementById('resize-image-btn').disabled = false;
+            closeDialog('image-resize-dialog');
+        }
     }
 });
 
@@ -999,28 +1132,39 @@ document.getElementById('convert-image-input').addEventListener('change', (e) =>
     }
 });
 
+// Replace the existing event listener for convert-image-btn with this one
 document.getElementById('convert-image-btn').addEventListener('click', async () => {
-    if (!convertImageFile) {
-        alert("Please select an image first.");
-        return;
-    }
+    if (!isProcessing) {
+        isProcessing = true;
+        document.getElementById('convert-image-btn').disabled = true;
 
-    const targetFormat = document.getElementById('convert-format').value;
-
-    try {
-        if (targetFormat === 'base64') {
-            const base64Image = await convertToBase64(convertImageFile);
-            const blob = new Blob([base64Image], { type: 'text/plain' });
-            download(blob, `converted_${convertImageFile.name.split('.')[0]}.txt`, 'text/plain');
-        } else {
-            const convertedImage = await convertImage(convertImageFile, targetFormat);
-            const fileExtension = targetFormat.split('/')[1];
-            download(convertedImage, `converted_${convertImageFile.name.split('.')[0]}.${fileExtension}`, targetFormat);
+        if (!convertImageFile) {
+            alert("Please select an image first.");
+            isProcessing = false;
+            document.getElementById('convert-image-btn').disabled = false;
+            return;
         }
-        closeDialog('image-convert-dialog');
-    } catch (error) {
-        console.error("Error converting image:", error);
-        alert("Error converting image");
+
+        const targetFormat = document.getElementById('convert-format').value;
+
+        try {
+            if (targetFormat === 'base64') {
+                const base64Image = await convertToBase64(convertImageFile);
+                const blob = new Blob([base64Image], { type: 'text/plain' });
+                download(blob, `converted_${convertImageFile.name.split('.')[0]}.txt`, 'text/plain');
+            } else {
+                const convertedImage = await convertImage(convertImageFile, targetFormat);
+                const fileExtension = targetFormat.split('/')[1];
+                download(convertedImage, `converted_${convertImageFile.name.split('.')[0]}.${fileExtension}`, targetFormat);
+            }
+        } catch (error) {
+            console.error("Error converting image:", error);
+            alert(`Error converting image: ${error.message}`);
+        } finally {
+            isProcessing = false;
+            document.getElementById('convert-image-btn').disabled = false;
+            closeDialog('image-convert-dialog');
+        }
     }
 });
 
@@ -1050,7 +1194,47 @@ async function convertImage(file, targetFormat) {
         img.src = URL.createObjectURL(file);
     });
 }
+// Global event listener for keyboard shortcuts
+// Replace the existing global event listener with this one
 
+document.addEventListener('keydown', function(e) {
+    if ((e.metaKey || e.ctrlKey) && e.key === 'Enter') {
+        e.preventDefault();
+        const visibleDialog = document.querySelector('.dialog[style*="display: block"]');
+        if (visibleDialog) {
+            let confirmButton;
+            switch (visibleDialog.id) {
+                case 'merge-dialog':
+                    confirmButton = document.getElementById('merge-btn');
+                    break;
+                case 'image-to-pdf-dialog':
+                    confirmButton = document.getElementById('convert-images-btn');
+                    break;
+                case 'compress-dialog':
+                    confirmButton = document.getElementById('compress-confirm-btn');
+                    break;
+                case 'image-resize-dialog':
+                    confirmButton = document.getElementById('resize-image-btn');
+                    break;
+                case 'image-convert-dialog':
+                    confirmButton = document.getElementById('convert-image-btn');
+                    break;
+                default:
+                    confirmButton = visibleDialog.querySelector('button:not([onclick*="closeDialog"])');
+            }
+            if (confirmButton && !confirmButton.disabled) {
+                confirmButton.click();
+            }
+        }
+    } else if (e.key === 'Escape') {
+        const visibleDialog = document.querySelector('.dialog[style*="display: block"]');
+        if (visibleDialog) {
+            closeDialog(visibleDialog.id);
+        }
+    }
+});
+
+let isProcessing = false;
 </script>
 </body>
 </html>
